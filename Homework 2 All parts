@@ -7,6 +7,8 @@ today = date.today()
 yr = int(today.year)
 # Dictionary to set up month values
 months= {"January": 1,"February":2,"March":3,"April":4,"May":5,"June":6,"July":7,"August":8,"September":9,"October":10,"November":11,"December":12}
+#creating new output file
+new_file = open("parsedDates.txt","w")
 # asking for dates inside file 
 a = open("inputDates","r")
 
@@ -30,6 +32,7 @@ for i in a:
             if year > yr:
                 print()
             else:
-                print(f"{exact_month}/{day}/{year}\n")
+                new_file.write(f"{exact_month}/{day}/{year}\n")
 a.close()
-# program repeats until stopped.
+new_file.close()
+# program creats a new file.
